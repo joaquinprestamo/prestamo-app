@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+*{
+  font-family: 'Quicksand', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-logo{
+  height: 75px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*** CARDS ***/
+.shop-card{
+  background: #f1f1f1;
+  padding: 40px;
+  text-transform: uppercase;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.shop-card h1{
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+.shop-card p{
+  font-size: .75rem;
+  color: #979797;
+}
+.shop-pic{
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  transition: .6s linear;
+  object-fit: cover;
+}
+.shop-colors{
+  margin-bottom: 40px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+}
+
+.shop-colors span{
+  width: 14px;
+  height: 14px;
+  margin: 0 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+.blue{
+  background: #7ed6df;
+}
+.green{
+  background: #badc58;
+}
+.yellow{
+  background: #f9ca24;
+}
+.rose{
+  background: #ff7979;
+}
+
+.shop-colors .active:after{
+  content: "";
+  width: 22px;
+  height: 22px;
+  border: 2px solid #8888;
+  position: absolute;
+  border-radius: 50%;
+  box-sizing: border-box;
+  left: -4px;
+  top: -4px;
+}
+.shop-info{
+  display: flex;
+  align-items: center;
+}
+.shop-price{
+  color: #aaaaaa;
+  font-size: 26px;
+}
+.shop-button{
+  margin-left: auto;
+  color: #7ed6df;
+  text-decoration: none;
+  border: 2px solid;
+  padding: 8px 24px;
+  border-radius: 20px;
+  transition: .4s linear;  
+}
+
+.shop-button:hover{
+  color:white;
+  background:#7ed6df;
+}
+.cartAmount{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: -5px;
+  right: -15px;
+  background:rgba(216, 216, 216, 0.5);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: .8rem;
+  color:white;
 }
