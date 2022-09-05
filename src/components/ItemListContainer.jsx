@@ -1,20 +1,24 @@
-import React from "react";
-import AddCart from "./AddCart";
-import ItemCount from "./ItemCount";
+import React, { useState } from "react";
+import ItemList from "./ItemList";
 
 const ItemListContainer = (props)=>{
+    const [items, setItems] = useState([        
+    ]);  
+    
+    const promesa = new Promise((resolve, reject) =>{
+        setTimeout(()=>{
+            setItems([
+                {id:1, name:"Latte & Medialuna", description:"Latte + Medialuna + Jugo de Naranja", image:"promo-latte.jpg", price:650, stock:5 },
+                {id:2, name:"Latte & Granola", description:"Latte + Copón de Granola con leche y frutas + Jugo de Naranja", image:"promo-granola.jpg", price:600, stock:5 },
+                {id:3, name:"Latte & Tostada", description:"Latte + Tostada con Palta + Jugo de Naranja", image:"promo-tostada.jpg", price:600, stock:3 },
+                {id:4, name:"Latte & Tostado", description:"Latte + Tostado de Jamón & Queso + Jugo de Naranja", image:"promo-tostado.jpg", price:650, stock:6 }
+            ])
+        }, 2000);
+    });
+
     return(
-        <div className="col-xl-3 col-lg-4 col-6 mb-3">
-            <div className="shop-card h-100">
-                <h1>{props.name}</h1>
-                <p>{props.description}</p>
-                <img src={"./assets/images/shop/" + props.image} alt="..." className="shop-pic mb-3" />
-                <div className="shop-info">
-                    <div className="shop-price">{props.price}</div>
-                </div>
-                <ItemCount stock={props.stock} />
-                <AddCart />
-            </div>
+        <div className="container my-5">
+            <ItemList allItems={items} />
         </div>
     );
 }
