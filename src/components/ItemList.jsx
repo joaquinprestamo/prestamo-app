@@ -8,7 +8,7 @@ const ItemList = (props)=>{
         <div className="row">
             {allItems.map((item, i) => {
                 return(
-                    <Item info = {item} key={i} />
+                    <Item info = {item} key={item.id} />
                 );
             })}
         </div>

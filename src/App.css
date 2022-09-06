@@ -3,6 +3,15 @@
 *{
   font-family: 'Quicksand', sans-serif;
 }
+.fs-7{
+  font-size: .9rem;
+}
+.fs-8{
+  font-size: .8rem;
+}
+.fs-9{
+  font-size: .7rem;
+}
 
 .header-logo{
   height: 75px;
@@ -76,7 +85,7 @@
   color: #aaaaaa;
   font-size: 26px;
 }
-.shop-button{
+.shop-button, .product-extra button{
   margin-left: auto;
   color: #7ed6df;
   text-decoration: none;
@@ -87,7 +96,7 @@
   display: block;
 }
 
-.shop-button:hover{
+.shop-button:hover, .product-extra button:hover{
   color:white;
   background:#7ed6df;
 }
@@ -115,4 +124,19 @@
   border:none;
   background: transparent;
   color:#699ca1;
+}
+
+.detail-pic{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-extra{
+  list-style: none;
+  padding-left: 0;
+}
+.product-extra li{
+  display: inline-block;
+  margin-right: .5rem;
+  margin-bottom: .5rem;
 }

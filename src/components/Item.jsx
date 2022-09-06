@@ -10,12 +10,12 @@ const Item = (props)=>{
                 <h1>{info.name}</h1>
                 <p>{info.description}</p>
                 <img src={"./assets/images/shop/" + info.image} alt="..." className="shop-pic mb-3" />
+                <small className="mt-3 fs-9">{info.stock} Disponibles</small>
                 <div className="shop-info">
                     <div className="shop-price">$ {info.price}</div>
                 </div>
                 <ItemCount stock={info.stock} />
                 <AddCart />
-                <small className="mt-3">{info.stock} Disponibles</small>
             </div>
         </div>
     );
