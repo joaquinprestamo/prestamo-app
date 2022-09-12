@@ -93,7 +93,9 @@
   padding: 8px 24px;
   border-radius: 20px;
   transition: .4s linear;  
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .shop-button:hover, .product-extra button:hover{

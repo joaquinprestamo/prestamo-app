@@ -1,14 +1,15 @@
 import React from "react";
 import CartWidget from "./CartWidget";
 import Logo from "./svg/Logo";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = (props) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <NavLink to={`/`} className="navbar-brand">
           <Logo color="white" className="header-logo"/>
-        </a>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -23,24 +24,21 @@ const NavBar = (props) => {
         <div className="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Café
-              </a>
+              <NavLink to={`/categoria/promociones`} className="nav-link" activeClassName="active">Promociones</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Bar
-              </a>
+              <NavLink to={`/categoria/cafe`} className="nav-link" activeClassName="active">Café</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Resto
-              </a>
+              <NavLink to={`/categoria/bar`} className="nav-link" activeClassName="active">Bar</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink to={`/categoria/resto`} className="nav-link" activeClassName="active">Resto</NavLink>
+            </li>
+            <li className="nav-item">
+              <Link to={`/cart`} className="nav-link" >
                 <CartWidget color="white"/>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
