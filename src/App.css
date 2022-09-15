@@ -98,10 +98,23 @@
   justify-content: center;
 }
 
-.shop-button:hover, .product-extra button:hover{
+.shop-button:hover, .product-extra button:hover, .inputOption[type="radio"]:checked ~ .labelOption{
   color:white;
   background:#7ed6df;
 }
+.labelOption{
+  cursor: pointer;
+}
+.inputOption[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #transparent;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
 .cartAmount{
   width: 20px;
   height: 20px;
@@ -120,6 +133,12 @@
   font-size: 1.25rem;
   background:rgba(207, 136, 78, 0.1);
   padding:5px;
+  color:#699ca1;
+}
+.shopCounter input{
+  background: transparent;
+  border:none;
+  width: 80%;
   color:#699ca1;
 }
 .btnCount{

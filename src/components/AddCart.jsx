@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AddCart = ()=>{
     return(
         <div className="text-center mb-3">
-            <a href="#" className="shop-button">Agregar</a>
+            <Link to={`/cart`} className="shop-button w-100">Agregar al carrito</Link>
         </div>
     );
 }

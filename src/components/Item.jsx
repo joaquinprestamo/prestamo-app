@@ -16,8 +16,6 @@ const Item = (props)=>{
                 <div className="shop-info">
                     <div className="shop-price">$ {info.price}</div>
                 </div>
-                <ItemCount stock={info.stock} />
-                <AddCart />
                 <Link to={`/producto/${info.shortcut}`} className="my-2 fs-8 shop-button text-center"><span className="me-2">Ver más</span> <Eye /></Link>
             </div>
         </div>

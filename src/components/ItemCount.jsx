@@ -1,4 +1,5 @@
 import React from "react";
+import AddCart from "./AddCart";
 
 const ItemCount = (props)=>{
     const [count, setCount] = React.useState(0);
@@ -10,11 +11,14 @@ const ItemCount = (props)=>{
         }
     }
     return (
-        <div className="col-12 d-flex justify-content-between mb-3 shopCounter my-2">
-            <button className="col btnCount" onClick={()=> counter(false)}>-</button>
-            <span className="col text-center">{count}</span>
-            <button className="col btnCount" onClick={()=> counter(true)}>+</button>
-        </div>
+        <>
+            <div className="col-12 d-flex justify-content-between mb-3 shopCounter my-2">
+                <button className="col btnCount" onClick={()=> counter(false)}>-</button>
+                <input className="col text-center" value={count} />
+                <button className="col btnCount" onClick={()=> counter(true)}>+</button>
+            </div>
+            {(count > 0)? <AddCart cantidad={count} /> : ''}            
+        </>
     );
 };
 

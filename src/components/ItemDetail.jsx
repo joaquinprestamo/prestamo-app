@@ -1,15 +1,24 @@
 import React from "react";
 import ItemCount from "./ItemCount";
-import AddCart from "./AddCart";
 
 const ItemDetail = ({info})=>{
+    const lecheSeleccionada = ()=>{
+        return(
+            <></>
+        );
+    }
+
     const leches = ()=>{
         if(info.leches !== undefined){
             return(
                 <ul className="mb-3 fs-7 product-extra">
                     {info.leches.map((leche, i) => {
                         return(
-                            <li key={i}><button>{leche}</button></li>
+                            
+                            <li key={i}>
+                                <input onChange={lecheSeleccionada} type="radio" className="inputOption" name="extraOption" id={i} checked />
+                                <label for={i} className="shop-button labelOption">{leche}</label>
+                            </li>
                         );
                     })}
                 </ul>
@@ -29,8 +38,9 @@ const ItemDetail = ({info})=>{
                     <p className="mb-3 fs-9">Últimos {info.stock} Disponibles</p>
                     {leches()}
                     <div className="shop-price">$ {info.price}</div>
-                    <ItemCount stock={info.stock} />
-                    <AddCart />
+                    <div className="col-md-6 mt-5">
+                        <ItemCount stock={info.stock} />                        
+                    </div>
                 </div>
             </div>
         </div>
