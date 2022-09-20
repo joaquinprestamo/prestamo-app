@@ -13,7 +13,7 @@ const ItemCount = ({item})=>{
     
     useEffect(() => {
         const existProduct = cart.filter(x=>x.id === item.id);
-        console.log(existProduct);
+        // console.log(existProduct);
         if(existProduct.length !== 0){
             setCount(existProduct[0].count);
         }
