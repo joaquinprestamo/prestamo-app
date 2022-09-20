@@ -1,7 +1,12 @@
 import React from "react";
+import { useEffect } from "react";
+import { useContext } from "react";
+import { CartContext } from "../context/cartContext";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({info})=>{
+    const {count} = useContext(CartContext);
+
     const lecheSeleccionada = ()=>{
         return(
             <></>
@@ -39,7 +44,7 @@ const ItemDetail = ({info})=>{
                     {leches()}
                     <div className="shop-price">$ {info.price}</div>
                     <div className="col-md-6 mt-5">
-                        <ItemCount stock={info.stock} />                        
+                        <ItemCount item={info} />
                     </div>
                 </div>
             </div>

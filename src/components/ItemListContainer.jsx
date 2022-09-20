@@ -28,7 +28,7 @@ export const ItemListContainer = ()=>{
             setTimeout(()=>{
                 resolve(products);
                 setLoading(true);
-            }, 2000);
+            }, 500);
         });
         if(categoryId){
             getItems.then(res => {

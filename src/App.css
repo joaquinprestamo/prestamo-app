@@ -146,6 +146,14 @@
   background: transparent;
   color:#699ca1;
 }
+.btnDelete, .btnDelete:hover{
+  border:none;
+  background-color: #ff7979;
+  color:white;
+}
+.btnDelete:hover{
+background-color: #e26060;
+}
 
 .detail-pic{
   width: 100%;
@@ -161,3 +169,10 @@
   margin-right: .5rem;
   margin-bottom: .5rem;
 }
+
+.description-pic{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
