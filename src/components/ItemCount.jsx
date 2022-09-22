@@ -32,8 +32,10 @@ const ItemCount = ({item})=>{
     const addProduct = {...item, count};
 
     function addItem(){
-        addToCart(addProduct);    
-        setGoToCart(true);
+        if(count > 0){
+            addToCart(addProduct);    
+            setGoToCart(true);
+        }
     }
     
     return (

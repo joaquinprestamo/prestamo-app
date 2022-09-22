@@ -3,12 +3,22 @@ import React, { createContext, useState, useEffect } from "react";
 export const CartContext = createContext();
 const CartProvider = ({children})=>{
     const [cart,setCart] = useState([]);
-    const [totalItems, setTotalItems] = useState(0);
     const [total, setTotal] = useState(0);
-
-    const sumTotal = (subtotal)=>{
-        setTotal(total + subtotal);
+    const [totalItems, setTotalItems] = useState(0);
+    
+    const sumTotal = ()=>{
+        if(cart){
+            let sum = 0;
+            cart.map(item => {
+                console.log(item.price)
+                sum += item.price*item.count
+            })
+            setTotal(sum);
+        }else{
+            setTotal(0);
+        }
     }
+
     const modifyItem = (subtotal, subtotalItems)=>{
         setTotal(total - subtotal);
         setTotalItems(totalItems - subtotalItems);

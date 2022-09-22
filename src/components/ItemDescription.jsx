@@ -10,9 +10,9 @@ const ItemDescription = ({info})=>{
 
     const subtotal = info.price * info.count;
 
-    useEffect(() => {
-        sumTotal(subtotal);
-    }, [])
+    // useEffect(() => {
+    //     sumTotal(subtotal);
+    // }, [])
 
     const eliminarItem = (id, subtotal)=>{
         removeItem(id, subtotal);

@@ -1,11 +1,14 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/cartContext";
 import ItemDescription from "./ItemDescription";
 
 const Cart = ()=>{
-    const {cart, total, deleteCart} = useContext(CartContext); 
+    const {cart, total, sumTotal, deleteCart} = useContext(CartContext); 
+    useEffect(()=>{
+        sumTotal();
+    },[total]);
     return(
         <div className="container my-5">
             {(cart.length > 0) ? 

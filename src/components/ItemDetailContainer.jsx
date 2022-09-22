@@ -19,9 +19,9 @@ const products = [
 ];
 
 export const ItemDetailContainer = ()=>{
+    const {shortcut} = useParams();
     const [item,setItem] = useState([]);    
     const [loading,setLoading] = useState(true);
-    const {shortcut} = useParams();
 
     useEffect(()=>{
         const getItem = new Promise(resolve => {

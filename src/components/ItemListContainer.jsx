@@ -3,7 +3,6 @@ import ItemList from "./ItemList";
 import Loading from "./loading/Loading";
 import { useParams } from "react-router-dom";
 
-
 const products = [
     {id:1, name:"Latte & Medialuna", description:"Latte + Medialuna + Jugo de Naranja", shortcut:"latte-medialuna-y-jugo-de-naranja", image:"promo-latte.jpg", price:650, stock:5, leches:["vacuna", "almendra", "soja"], categoria:"promociones" },
     {id:2, name:"Latte & Granola", description:"Latte + Copón de Granola con leche y frutas + Jugo de Naranja", shortcut:"latte-copon-de-granola-con-leche-y-frutas-y-jugo-de-naranja", image:"promo-granola.jpg", price:600, stock:5, leches:["vacuna", "almendra", "soja"], categoria:"promociones" },
