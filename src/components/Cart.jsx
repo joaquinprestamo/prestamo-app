@@ -1,4 +1,5 @@
 import React from "react";
+
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/cartContext";
@@ -9,6 +10,7 @@ const Cart = ()=>{
     useEffect(()=>{
         sumTotal();
     },[total]);
+
     return(
         <div className="container my-5">
             {(cart.length > 0) ? 
@@ -16,8 +18,7 @@ const Cart = ()=>{
                     {cart.map((item)=>{
                         return(
                             <>
-                                <ItemDescription info={item} key={item.id} />  
-                                                
+                                <ItemDescription info={item} key={item.id} />                                                  
                             </>
                         )
                     })}  
@@ -33,7 +34,7 @@ const Cart = ()=>{
             }  
 
             <Link to="/" className="mt-5 fs-8 shop-button text-center">Seguir comprando</Link>
-                        
+            <Link to="/checkout" className="mt-5 fs-8 shop-button text-center">Terminar compra</Link>  
         </div>
     );
 }

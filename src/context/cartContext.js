@@ -46,9 +46,7 @@ const CartProvider = ({children})=>{
     }
 
     const removeItem = (id, subtotal, subtotalItems)=>{  
-        console.log(id); 
         const newCart = cart.filter(item => item.id !== id);
-        console.log(newCart);
         setCart(newCart);   
         setTotal(total - subtotal);
         setTotalItems(totalItems - subtotalItems);
