@@ -12,11 +12,12 @@ export const ItemDetailContainer = ()=>{
     useEffect(()=>{   
         const db = getFirestore();
         const queryDoc = doc(db, 'items',shortcut);
-        getDoc(queryDoc)
-            .then(
-                res => setItem({id: res.id, ...res.data()}),
-                setLoading(false)
-            );
+        getDoc(queryDoc).then((res)=>{
+            if(res.exists()){
+                setItem({id: res.id, ...res.data()});
+                setLoading(false);
+            }
+        })
     },[shortcut]);
 
     return(

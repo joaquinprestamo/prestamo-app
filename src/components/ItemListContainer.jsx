@@ -9,16 +9,17 @@ export const ItemListContainer = ()=>{
     const [loading,setLoading] = useState(true);
     const {categoryId} = useParams();
 
-    useEffect(()=>{   
+    useEffect(() => {
+        
         const db = getFirestore();
         const queryCollection = collection(db, 'items');
         const queryFilter = categoryId ? query(queryCollection, where("categoria", "==", categoryId)) : queryCollection;
-        getDocs(queryFilter)
-            .then(
-                res => setItems(res.docs.map(item => ({id: item.id, ...item.data()}))),
-                setLoading(false)
-            );
-    },[categoryId]);
+        getDocs(queryFilter).then((res) =>{
+            setItems(res.docs.map((doc) => ({id: doc.id, ...doc.data()})));
+            setLoading(false);
+        })
+
+    }, [categoryId]);
 
     return(
         <div className="container my-5">   

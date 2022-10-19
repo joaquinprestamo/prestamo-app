@@ -30,7 +30,7 @@ const ItemDescription = ({info})=>{
                     <h6 className="fw-bold">{info.name}</h6>
                     <p className="mb-0"><small>Cantidad: {info.count}</small></p>
                     <p className="mb-0"><small>Precio unitario: $ {info.price}</small></p>
-                    <Link to={`/producto/${info.shortcut}`} onClick={()=> modificarItem(subtotal, info.count)}>Modificar</Link>
+                    <Link to={`/producto/${info.id}`} onClick={()=> modificarItem(subtotal, info.count)}>Modificar</Link>
                 </div>
             </div>
             <div className="text-end">
